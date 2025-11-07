@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "@/hooks/useTranslation";
-import heroImage from "@/assets/hero-manufacturing.jpg";
+import heroImage from "/images/hero-manufacturing.jpg";
 
 const OrderBooking = () => {
   const { toast } = useToast();

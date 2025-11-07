@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, FileText, Package, Scissors, Archive } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import productsImage from "@/assets/products-showcase.jpg";
+import productsImage from "/images/products-showcase.jpg";
 
 const Services = () => {
   const { t } = useTranslation();

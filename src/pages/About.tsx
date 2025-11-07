@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Award, Heart, Clock } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import qualityImage from "@/assets/quality-control.jpg";
+import qualityImage from "/images/quality-control.jpg";
 
 const About = () => {
   const { t } = useTranslation();

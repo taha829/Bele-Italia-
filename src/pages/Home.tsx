@@ -4,8 +4,8 @@ import FeatureCard from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Package, Scissors, Truck, Users, CheckCircle, Sparkles } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import heroImage from "@/assets/hero-manufacturing.jpg";
-import productsImage from "@/assets/products-showcase.jpg";
+import heroImage from "/images/hero-manufacturing.jpg";
+import productsImage from "/images/products-showcase.jpg";
 
 const Home = () => {
   const { t } = useTranslation();

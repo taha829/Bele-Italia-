@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, MessageCircle, User } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import qualityImage from "@/assets/quality-control.jpg";
+const qualityImage = "/images/quality-control.jpg";
 
 const Contact = () => {
   const { t } = useTranslation();
