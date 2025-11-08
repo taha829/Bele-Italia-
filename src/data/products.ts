@@ -96,8 +96,8 @@ export const products: Product[] = [
   },
   {
     id: '12',
-    name: 'أغطية طاولات ملونة - فضي (10 قطع)',
-    category: 'أغطية طاولات',
+    name: 'مفارش سفرة ملونة - فضي (10 قطع)',
+    category: 'مفارش سفرة',
     price: 35,
     image: '/images/images (7).jpg',
     imageAlt: 'صورة أغطية طاولات باللون الفضي - عبوة 10 قطع',

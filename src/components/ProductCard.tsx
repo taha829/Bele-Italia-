@@ -15,21 +15,26 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { t } = useTranslation();
 
   const handleAddToCart = () => {
-    // Add single product to cart
     addItem(product, 1);
   };
 
-    return (
-  <Card className="flex flex-col overflow-hidden hover:shadow-md transition-transform duration-200 transform hover:-translate-y-0.5 rounded-lg shadow-sm max-h-48 border-0">
-      <div className="relative overflow-hidden rounded-t-lg bg-gray-50 h-28">
+  return (
+    <Card
+      className="
+        flex flex-col justify-between 
+        overflow-hidden rounded-lg 
+        border border-gray-100 bg-white 
+        hover:shadow-md transition-all duration-300
+      "
+    >
+      {/* صورة المنتج */}
+      <div className="relative bg-gray-50 h-40 overflow-hidden">
         <img
           src={product.image}
           alt={product.imageAlt ?? product.name}
           loading="lazy"
           decoding="async"
-          width={800}
-          height={144}
-          className="w-full h-full object-cover bg-gray-100"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           onError={(e) => {
             const img = e.currentTarget as HTMLImageElement;
             if (!img.dataset.fallback) {
@@ -38,40 +43,41 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             }
           }}
         />
-        <Badge className="absolute top-2 right-2 bg-primary/5 text-primary text-xs px-2 py-0.5 rounded">
+        <Badge className="absolute top-2 right-2 bg-primary/10 text-primary text-xs px-2 py-0.5 rounded">
           الأحدث
         </Badge>
       </div>
-      
-  <CardContent className="flex-1 p-2 pb-4 min-h-0">
-        <h3 className="font-medium text-sm mb-1 line-clamp-1 truncate">
-          {product.name}
-        </h3>
+
+      {/* التفاصيل */}
+      <CardContent className="px-3 py-2 flex flex-col gap-1 flex-1">
+        <h3 className="text-sm font-semibold text-gray-800 line-clamp-1">{product.name}</h3>
 
         {product.description && (
-          <p className="text-muted-foreground text-xs mb-1 line-clamp-1 truncate">
-            {product.description}
-          </p>
+          <p className="text-xs text-gray-500 line-clamp-1">{product.description}</p>
         )}
-        {/* Price shown above the button */}
-        <div className="mb-2">
-          <span className="text-base font-semibold text-yellow-700 block">
+
+        {/* السعر */}
+        <div className="mt-2">
+          <span className="text-base font-semibold text-yellow-700">
             {product.price} {t('currency')}
           </span>
         </div>
       </CardContent>
-      <CardFooter className="p-2 pt-0">
-        <div className="w-full flex items-center justify-center">
-          <Button
-            variant="outline"
-            onClick={handleAddToCart}
-            className="w-full border-yellow-400 hover:bg-yellow-50 text-yellow-700 hover:text-yellow-800"
-            size="sm"
-          >
-            <ShoppingCart className="h-4 w-4 mr-2 rtl:ml-2 rtl:mr-0" />
-            {t('addToCart')}
-          </Button>
-        </div>
+
+      {/* زر الإضافة */}
+      <CardFooter className="px-3 pb-3 pt-0">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handleAddToCart}
+          className="
+            w-full border-yellow-400 hover:bg-yellow-50 
+            text-yellow-700 hover:text-yellow-800 flex items-center justify-center gap-2
+          "
+        >
+          <ShoppingCart className="h-4 w-4" />
+          {t('addToCart')}
+        </Button>
       </CardFooter>
     </Card>
   );
